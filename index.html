@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="ht">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,24 +7,59 @@
         <meta name="description" content="Tuure Kaunisto - A Helsinki based photographer">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="bg"></div>
 
-        <!--<link rel="stylesheet" href="css/main.css">-->
+        <section class="content">
+            <h1>Tuure Kaunisto</h1>
+            <p>photographer</p>
+            <p class="some">
+                <a href="https://facebook.com/TuureKaunistoPhotography"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cpath d='M16.55911868-.00006106C7.41402268-.00006106-.6e-7 7.41396187-.6e-7 16.55905788v266.881829c0 9.14397263 7.41402293 16.55911894 16.55911894 16.55911894H283.4408816c9.14397262 0 16.55911894-7.4151463 16.55911894-16.55911894v-266.881829c0-9.145096-7.41514632-16.55911894-16.55911894-16.55911894H16.55911868zm72.00566206 96.4894163a53.66634764 53.66634764 0 0 1 53.66544628 53.66551237 53.66634764 53.66634764 0 0 1-53.66544628 53.6654463 53.66634764 53.66634764 0 0 1-53.66544628-53.6654463 53.66634764 53.66634764 0 0 1 53.66544628-53.66551236zm123.9804111 0a53.66634764 53.66634764 0 0 1 53.6654463 53.66551237 53.66634764 53.66634764 0 0 1-53.6654463 53.6654463 53.66634764 53.66634764 0 0 1-53.66551236-53.6654463 53.66634764 53.66634764 0 0 1 53.66551237-53.66551236z' fill='#fff'/%3E%3C/svg%3E"></a>
+
+                <a href="mailto:asdf@example.com"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cg transform='matrix(1.12404 0 0 -1.12404 -714.388 435.506)' clip-path='url(#clipPath42)'%3E%3Cpath d='M650.2828 387.4473c-8.136 0-14.73-6.594-14.73-14.73v-237.434c0-8.135 6.594-14.731 14.73-14.731h127.827v103.356h-34.782v40.28h34.782v29.705c0 34.472 21.054 53.243 51.806 53.243 14.731 0 27.391-1.096 31.08-1.586v-36.026l-21.328-.01c-16.724 0-19.963-7.947-19.963-19.609v-25.717h39.887l-5.193-40.28h-34.694v-103.356h68.012c8.135 0 14.73 6.596 14.73 14.731v237.434c0 8.136-6.595 14.73-14.73 14.73' fill='#fff'/%3E%3C/g%3E%3C/svg%3E"></a>
+
+                <a href="https://flickr.com"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cpath d='M16.56029875.0000375C7.41521288.0000375 0 7.4135 0 16.5585875v266.88287C0 292.5854145 7.41521287 300 16.56029875 300H283.4414125C292.585375 300 300 292.5854145 300 283.4414575v-266.88287c0-9.1450875-7.414625-16.55855-16.5585875-16.55855H16.56029875zm48.512995 89.5370375H235.1286v13.3462375l-86.416 42.7786-83.63930625-43.019225V89.537075zm0 23.2185125L148.6318 155.7344l86.4968-42.8154875v96.51839625H65.07329375V112.7555875z' fill='#fff'/%3E%3C/svg%3E"></a>
+            </p>
+        </section>
+
         <style>
             @keyframes fade {
                 from { opacity: 0; }
                 to { opacity: 1; }
             }
             html {
-                background: #555 url(img/bg-2560.jpg) no-repeat 50% 50%;
-                background-size: cover;
+                background: #333;
                 min-height: 100%;
                 display: flex;
                 align-items: center;
             }
             body {
                 width: 100%;
+                height: 100%;
+            }
+            .content {
+                width: 100%;
+                height: 100%;
                 animation-name: fade;
                 animation-duration: 6s;
+            }
+            .bg {
+                background: url(img/bg-2560.jpg) no-repeat 50% 50%;
+                background-size: cover;
+                min-height: 100%;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                -webkit-transition: opacity 1s;
+                transition: opacity 1s;
+            }
+            .bg-loaded .bg {
+                opacity: 1;
             }
             h1, p {
                 font-family: titillium;
@@ -75,86 +110,106 @@
             /* px density = 1 */
             @media  (max-width: 1600px) and (max-height: 1067px) and (-webkit-max-device-pixel-ratio: 1),
                     (max-width: 1600px) and (max-height: 1067px) and (max-resolution: 96dpi), {
-                html {
+                .bg {
                     background-image: url(img/bg-1600.jpg);
                 }
             }
             @media  (max-width: 1280px) and (max-height: 853px) and (-webkit-max-device-pixel-ratio: 1),
                     (max-width: 1280px) and (max-height: 853px) and (max-resolution: 96dpi){
-                html {
+                .bg {
                     background-image: url(img/bg-1280.jpg);
                 }
             }
             /* retina and retinaish devices */
             @media  (max-width: 800px) and (max-height: 533px) and (-webkit-min-device-pixel-ratio: 1.25), 
                     (max-width: 800px) and (max-height: 533px) and (min-resolution: 120dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-1600.jpg);
                 }
             }
             @media  (max-width: 640px) and (max-height: 427px) and (-webkit-min-device-pixel-ratio: 1.25), 
                     (max-width: 640px) and (max-height: 427px) and (min-resolution: 120dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-1280.jpg);
                 }
             }
             /* px ratio >= 3 */
             @media  (-webkit-min-device-pixel-ratio: 3), 
                     (min-resolution: 288dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-2560.jpg);
                 }
             }
 
             @media (orientation: portrait) {
-                html {
+                .bg {
                     background-image: url(img/bg-v-2160.jpg);
                 }
             }
             /* px density = 1 */
             @media  (orientation: portrait) and (max-height: 1600px) and (max-width: 1200px) and (-webkit-max-device-pixel-ratio: 1), 
                     (orientation: portrait) and (max-height: 1600px) and (max-width: 1200px) and (max-resolution: 96dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-v-1600.jpg);
                 }
             }
             @media  (orientation: portrait) and (max-height: 1024px) and (max-width: 768px) and (-webkit-max-device-pixel-ratio: 1),
                     (orientation: portrait) and (max-height: 1024px) and (max-width: 768px) and (max-resolution: 96dpi){
-                html {
+                .bg {
                     background-image: url(img/bg-v-1024.jpg);
                 }
             }
             /* retina and retinaish devices */
             @media  (orientation: portrait) and (max-height: 800px) and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1.25), 
                     (orientation: portrait) and (max-height: 800px) and (max-width: 600px) and (min-resolution: 120dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-v-1600.jpg);
                 }
             }
             @media  (orientation: portrait) and (max-height: 512px) and (max-width: 384px) and (-webkit-min-device-pixel-ratio: 1.25),
                     (orientation: portrait) and (max-height: 512px) and (max-width: 384px) and (min-resolution: 120dpi){
-                html {
+                .bg {
                     background-image: url(img/bg-v-1024.jpg);
                 }
             }
             /* px ratio >= 3 */
             @media  (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3), 
                     (orientation: portrait) and (min-resolution: 288dpi) {
-                html {
+                .bg {
                     background-image: url(img/bg-v-2160.jpg);
                 }
             }
         </style>
-    </head>
-    <body>
-        <h1>Tuure Kaunisto</h1>
-        <p>photographer</p>
-        <p class="some">
-            <a href="https://facebook.com/TuureKaunistoPhotography"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cpath d='M16.55911868-.00006106C7.41402268-.00006106-.6e-7 7.41396187-.6e-7 16.55905788v266.881829c0 9.14397263 7.41402293 16.55911894 16.55911894 16.55911894H283.4408816c9.14397262 0 16.55911894-7.4151463 16.55911894-16.55911894v-266.881829c0-9.145096-7.41514632-16.55911894-16.55911894-16.55911894H16.55911868zm72.00566206 96.4894163a53.66634764 53.66634764 0 0 1 53.66544628 53.66551237 53.66634764 53.66634764 0 0 1-53.66544628 53.6654463 53.66634764 53.66634764 0 0 1-53.66544628-53.6654463 53.66634764 53.66634764 0 0 1 53.66544628-53.66551236zm123.9804111 0a53.66634764 53.66634764 0 0 1 53.6654463 53.66551237 53.66634764 53.66634764 0 0 1-53.6654463 53.6654463 53.66634764 53.66634764 0 0 1-53.66551236-53.6654463 53.66634764 53.66634764 0 0 1 53.66551237-53.66551236z' fill='#fff'/%3E%3C/svg%3E"></a>
+        <script>
+            'use strict';
 
-            <a href="mailto:asdf@example.com"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cg transform='matrix(1.12404 0 0 -1.12404 -714.388 435.506)' clip-path='url(#clipPath42)'%3E%3Cpath d='M650.2828 387.4473c-8.136 0-14.73-6.594-14.73-14.73v-237.434c0-8.135 6.594-14.731 14.73-14.731h127.827v103.356h-34.782v40.28h34.782v29.705c0 34.472 21.054 53.243 51.806 53.243 14.731 0 27.391-1.096 31.08-1.586v-36.026l-21.328-.01c-16.724 0-19.963-7.947-19.963-19.609v-25.717h39.887l-5.193-40.28h-34.694v-103.356h68.012c8.135 0 14.73 6.596 14.73 14.731v237.434c0 8.136-6.595 14.73-14.73 14.73' fill='#fff'/%3E%3C/g%3E%3C/svg%3E"></a>
+            function checkBgStatus () {
+                var html = document.getElementsByTagName('html')[0],
+                    bg = document.getElementsByClassName('bg')[0],
+                    // get the bg-image (chosen by a media query)
+                    bgImg = getComputedStyle(bg).getPropertyValue('background-image'),
+                    loadImg;
 
-            <a href="https://flickr.com"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300'%3E%3Cpath d='M16.56029875.0000375C7.41521288.0000375 0 7.4135 0 16.5585875v266.88287C0 292.5854145 7.41521287 300 16.56029875 300H283.4414125C292.585375 300 300 292.5854145 300 283.4414575v-266.88287c0-9.1450875-7.414625-16.55855-16.5585875-16.55855H16.56029875zm48.512995 89.5370375H235.1286v13.3462375l-86.416 42.7786-83.63930625-43.019225V89.537075zm0 23.2185125L148.6318 155.7344l86.4968-42.8154875v96.51839625H65.07329375V112.7555875z' fill='#fff'/%3E%3C/svg%3E"></a>
-        </p>
+                // create an img element with the same bg
+                bgImg = bgImg.replace(/(url\(|\))/g, '');
+                loadImg = document.createElement('img');
+                loadImg.src = bgImg;
+
+                // set the onload function
+                loadImg.onload = function() {
+                    html.className = 'bg-loaded'
+                };
+            }
+
+            // set the bg-loaded class when the bg has been pre-loaded
+            document.DOMContentLoaded = checkBgStatus
+            document.addEventListener("DOMContentLoaded", function(event) {
+                checkBgStatus();
+            });
+            window.onload = checkBgStatus;
+
+            //hide the adress bar
+            window.scrollTo(0,1);
+        </script>
     </body>
 </html>
