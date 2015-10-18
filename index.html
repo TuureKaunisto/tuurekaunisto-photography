@@ -198,6 +198,8 @@
                 // set the onload function
                 loadImg.onload = function() {
                     html.className = 'bg-loaded'
+                    //hide the address bar
+                    window.scrollTo(0,1);
                 };
             }
 
@@ -207,9 +209,6 @@
                 checkBgStatus();
             });
             window.onload = checkBgStatus;
-
-            //hide the adress bar
-            window.scrollTo(0,1);
         </script>
     </body>
 </html>
