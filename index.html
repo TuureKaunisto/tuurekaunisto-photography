@@ -8,11 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200' rel='stylesheet' type='text/css'>
         <!-- Chrome, Firefox OS and Opera -->
-        <meta name="theme-color" content="#333">
+        <meta name="theme-color" content="#111">
         <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="#333">
+        <meta name="msapplication-navbutton-color" content="#111">
         <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="#333">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#111">
     </head>
     <body>
         <div class="bg"></div>
@@ -35,7 +35,7 @@
                 to { opacity: 1; }
             }
             html {
-                background: #333;
+                background: #111;
                 height: 100%;
             }
             body {
@@ -199,7 +199,7 @@
                     loadImg;
 
                 // create an img element with the same bg
-                bgImg = bgImg.replace(/(url\(|\))/g, '');
+                bgImg = bgImg.replace(/(url\(|\)|\'|\")/g, '');
                 loadImg = document.createElement('img');
                 loadImg.src = bgImg;
 
